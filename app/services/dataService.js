@@ -9,7 +9,8 @@
 
         var service = {
             getTopGames: getTopGames,
-            getMessageCount: getMessageCount
+            getMessageCount: getMessageCount,
+            getChannels: getChannels
         };
 
         return service;
@@ -24,6 +25,17 @@
             }).error(function (error) {
                 deferred.reject(error);
             });
+            return deferred.promise;
+        }
+
+        function getChannels(game) {
+            var deferred = new $q.defer();
+            $http.jsonp('https://api.twitch.tv/kraken/search/streams?q=' + encodeURI(game) + '&callback=JSON_CALLBACK')
+                .success(function (resp) {
+                    deferred.resolve(resp);
+                }).error(function (error) {
+                    deferred.reject(error);
+                });
             return deferred.promise;
         }
     }

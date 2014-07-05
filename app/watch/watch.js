@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
     var controllerId = 'watch';
-    angular.module('app').controller(controllerId, ['common', '$route','$routeParams', watch]);
+    angular.module('app').controller(controllerId, ['common', '$route','$routeParams','dataService', watch]);
 
-    function watch(common, $route, $routeParams) {
+    function watch(common, $route, $routeParams, dataService) {
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
 
@@ -13,8 +13,20 @@
         activate();
 
         function activate() {
-            common.activateController([], controllerId)
+            var promises = [getChannels()];
+            common.activateController(promises, controllerId)
                 .then(function () { log('Activated Admin View'); });
+        }
+
+        function getChannels() {
+
+            dataService.getChannels(vm.title).then(function (data) {
+                vm.channels = data.streams;
+                return vm.channels;
+            },
+            function (error) {
+                vm.error = error;
+            });
         }
     }
 })();
