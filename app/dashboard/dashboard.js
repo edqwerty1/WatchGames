@@ -25,9 +25,9 @@
         }
 
         function getMessageCount() {
-            return dataService.getMessageCount().then(function (data) {
-                return vm.messageCount = data;
-            });
+           
+                return vm.messageCount = 9;
+ 
         }
 
         function getTopGames() {
