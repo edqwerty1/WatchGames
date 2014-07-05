@@ -1,0 +1,6 @@
+G:\WatchGames\WatchGames\WatchGames\bin\WatchGames.dll.config
+G:\WatchGames\WatchGames\WatchGames\bin\WatchGames.dll
+G:\WatchGames\WatchGames\WatchGames\bin\WatchGames.pdb
+G:\WatchGames\WatchGames\WatchGames\obj\Debug\WatchGames.csprojResolveAssemblyReference.cache
+G:\WatchGames\WatchGames\WatchGames\obj\Debug\WatchGames.dll
+G:\WatchGames\WatchGames\WatchGames\obj\Debug\WatchGames.pdb
