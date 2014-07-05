@@ -3,9 +3,9 @@
 
     var controllerId = 'sidebar';
     angular.module('app').controller(controllerId,
-        ['$route', 'config', 'dataService', 'common', sidebar]);
+        ['$route', '$routeParams', 'config', 'dataService', 'common', sidebar]);
 
-    function sidebar($route, config, dataService, common) {
+    function sidebar($route, $routeParams, config, dataService, common) {
         var vm = this;
         var getLogFn = common.logger.getLogFn;
         var log = getLogFn(controllerId);
@@ -46,11 +46,11 @@
         }
 
         function isCurrent(route) {
-            //if (!route.config.title || !$route.current || !$route.current.title) {
-            //    return '';
-            //}
-            //var menuName = route.config.title;
-            //return $route.current.title.substr(0, menuName.length) === menuName ? 'current' : '';
+            if (!route.config.title || !$routeParams.game) {
+                return '';
+            }
+            var menuName = route.config.title;
+            return $routeParams.game.substr(0, menuName.length) === menuName ? 'current' : '';
         }
     };
 })();

@@ -9,13 +9,11 @@
 
         var service = {
             getTopGames: getTopGames,
-            getMessageCount: getMessageCount,
-            getChannels: getChannels
+            getChannels: getChannels,
+            getStream: getStream
         };
 
         return service;
-
-        function getMessageCount() { return $q.when(72); }
 
         function getTopGames() {
             var deferred = new $q.defer();
@@ -31,6 +29,17 @@
         function getChannels(game) {
             var deferred = new $q.defer();
             $http.jsonp('https://api.twitch.tv/kraken/search/streams?q=' + encodeURI(game) + '&callback=JSON_CALLBACK')
+                .success(function (resp) {
+                    deferred.resolve(resp);
+                }).error(function (error) {
+                    deferred.reject(error);
+                });
+            return deferred.promise;
+        }
+
+        function getStream(channel) {
+            var deferred = new $q.defer();
+            $http.jsonp('https://api.twitch.tv/kraken/streams/' + encodeURI(channel) + '?callback=JSON_CALLBACK')
                 .success(function (resp) {
                     deferred.resolve(resp);
                 }).error(function (error) {

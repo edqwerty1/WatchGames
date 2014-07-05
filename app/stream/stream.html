@@ -1,4 +1,4 @@
-﻿<section class="mainbar" data-ng-controller="watch as vm">
+﻿<section class="mainbar" data-ng-controller="stream as vm">
     <section class="matter">
         <div class="container">
             <div class="row">
@@ -6,11 +6,8 @@
                     <div data-cc-widget-header title="{{vm.title}}"></div>
                     <div class="widget-content user">
                         <h3>TODO: Implement Your Features</h3>
-                        <ul class="navi">
-                            <li data-ng-repeat="channel in vm.channels">
-                                {{channel.channel.display_name}}
-                            </li>
-                        </ul>
+                        <iframe class="videoplayer" src="{{vm.streamUrl}}"
+                                height="478" width="800" frameborder="0" scrolling="no"></iframe>
                     </div>
                     <div class="widget-foot">
                         <div class="clearfix"></div>

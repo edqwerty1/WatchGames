@@ -57,6 +57,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\stream\stream.html" />
+    <Content Include="app\stream\stream.js" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -143,8 +145,8 @@
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.10.0.js" />
     <Content Include="Scripts\ui-bootstrap-tpls-0.10.0.min.js" />
-    <Content Include="app\watch\watch.html" />
-    <Content Include="app\watch\watch.js" />
+    <Content Include="app\channels\channels.html" />
+    <Content Include="app\channels\channels.js" />
     <Content Include="Web.config" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Scripts\toastr.min.js.map" />

@@ -43,10 +43,20 @@
                 url: '/watch/:game',
                 config: {
                     title: 'watch',
-                    templateUrl: 'app/watch/watch.html',
+                    templateUrl: 'app/channels/channels.html',
                     settings: {
                         nav: 3,
                         content: '<i class="fa fa-lock"></i> Watch'
+                    }
+                }
+            }, {
+                url: '/stream/:channel',
+                config: {
+                    title: 'watch',
+                    templateUrl: 'app/stream/stream.html',
+                    settings: {
+                        nav: 3,
+                        content: '<i class="fa fa-lock"></i> Stream'
                     }
                 }
             }
