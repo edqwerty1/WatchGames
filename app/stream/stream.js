@@ -21,7 +21,7 @@
         function getStream() {
 
             dataService.getStream(vm.title).then(function (data) {
-                vm.streamUrl = $sce.trustAsResourceUrl('http://www.twitch.tv/' + data.stream.channel.name + '/hls');
+                vm.streamUrl = $sce.trustAsResourceUrl('http://www.twitch.tv/embed?channel=' + data.stream.channel.name);
                 return vm.stream;
             },
             function (error) {
